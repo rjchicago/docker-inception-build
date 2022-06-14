@@ -1,0 +1,10 @@
+version: '3.8'
+services:
+  docker:
+    image: docker
+    working_dir: /
+    entrypoint: sh entrypoint.sh
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./entrypoint.sh:/entrypoint.sh
+      - ./Dockerfile:/Dockerfile
