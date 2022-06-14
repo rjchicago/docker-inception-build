@@ -1,10 +1,10 @@
 # docker-inception-build
 
-build an image inside of docker!
+Build a docker image inside of docker!
 
 ## use case
 
-your build environment has `docker` but is missing additional dependencies required.
+Your build has dependencies. Your CI tool does not have these available. But... it has **`docker`**!
 
 ## demo
 
