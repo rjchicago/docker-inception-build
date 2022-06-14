@@ -1,10 +1,8 @@
 version: '3.8'
 services:
-  docker:
-    image: docker
-    working_dir: /
-    entrypoint: sh entrypoint.sh
+  docker-inception-build:
+    image: demo/docker-inception-build:outer
+    build: .
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./entrypoint.sh:/entrypoint.sh
-      - ./Dockerfile:/Dockerfile
+      - ./inception:/inception
