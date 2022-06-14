@@ -7,8 +7,7 @@ RUN rc-update add docker boot
 # install any other deps...
 # RUN apk add...
 
-WORKDIR /inception
-COPY ./inception /inception
-RUN chmod +x /inception/entrypoint.sh
+WORKDIR /inner
+COPY ./inner /inner
 
-ENTRYPOINT [ "sh", "entrypoint.sh" ]
+ENTRYPOINT docker build -t $INNER_IMAGE .

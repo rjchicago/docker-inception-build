@@ -3,6 +3,8 @@ services:
   docker-inception-build:
     image: demo/docker-inception-build:outer
     build: .
+    environment:
+      - INNER_IMAGE=demo/docker-inception-build:inner
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock
-      - ./inception:/inception
+      - ./inner:/inner
