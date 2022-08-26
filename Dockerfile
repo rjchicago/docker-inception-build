@@ -1,13 +1,12 @@
 FROM alpine
 
 # install docker
-RUN apk add --update curl docker openrc
+RUN apk add --no-cache docker openrc
 RUN rc-update add docker boot
 
-# install any other deps...
-# RUN apk add...
+# install any other deps
+RUN apk add --no-cache curl
 
-WORKDIR /inner
-COPY ./inner /inner
+VOLUME [ "/build" ]
 
-ENTRYPOINT docker build -t $INNER_IMAGE .
+ENTRYPOINT docker build -t $BUILD_IMAGE /build

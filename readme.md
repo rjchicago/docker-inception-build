@@ -19,3 +19,11 @@ docker-compose up --build
 # verify images locally
 docker image ls | grep docker-inception-build
 ```
+
+``` sh
+# run the demo!
+docker run --rm demo/docker-inception-build:inner
+
+# output...
+hello from inner!
+```
